@@ -1,0 +1,4 @@
+signin button : hover tag
+fa-mobile-screen : hover color
+Floating Menu button : not working
+Top 10 daily Interests : exceeding limits

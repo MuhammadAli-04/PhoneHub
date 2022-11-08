@@ -1,0 +1,355 @@
+//colors
+$color-primary: white;
+$color-secondary: black;
+$color-tertiary: #222222;
+$color-tertiary-light: #c1c1c1;
+$color-tertiary-lightest: #ebeff3;
+$color-white: white;
+$color-grey-dark-3: $color-tertiary;
+//keyframes
+@keyframes display {
+    0% {
+        opacity: 0%;
+        transition: all 0.1s;
+    }
+    50% {
+        opacity: 50%;
+        transition: all 0.1s;
+    }
+    100% {
+        opacity: 100%;
+        transition: all 0.1s;
+    }
+}
+
+//mixins
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+
+@mixin respond($breakpoint) {
+    @if $breakpoint==phone {
+        @media only screen and (max-width: 37.5em) {
+            @content;
+        } //600px
+    }
+    @if $breakpoint==tab-port {
+        @media only screen and (max-width: 56.25em) {
+            @content;
+        } //900px
+    }
+    @if $breakpoint==tab-land {
+        @media only screen and (max-width: 75em) {
+            @content;
+        } //1200px
+    }
+    @if $breakpoint==big-desktop {
+        @media only screen and (min-width: 112.5em) {
+            @content;
+        } //1800
+    }
+}
+
+.ads {
+    font-size: large;
+    padding: 3.5%;
+    text-align: center;
+    background-color: $color-tertiary-light;
+}
+
+//Body
+body {
+    color: $color-secondary;
+    background-color: $color-primary;
+}
+
+.brands {
+    margin: 0;
+    padding: 0;
+    background-color: $color-tertiary-lightest;
+    border-left: $color-secondary;
+}
+
+.brand-name {
+    font-size: small;
+    text-align: center;
+    padding-top: 15%;
+    padding-bottom: 15%;
+    margin: 0;
+    &:hover {
+        color: $color-primary;
+        background-color: $color-tertiary;
+    }
+}
+
+//columns
+.col-1-of-2 {
+    width: calc(100% / 2);
+    float: left;
+}
+
+.col-1-of-4 {
+    width: calc(100% / 4);
+    float: left;
+}
+
+.col-1-of-5 {
+    width: calc(100% / 5);
+    float: left;
+}
+
+.col-3-of-5 {
+    width: calc((100% / 5) * 3);
+    float: left;
+    padding: 0% 1%;
+    //background: linear-gradient(to bottom right, $color-secondary, lightgreen);
+}
+
+.col-4-of-5 {
+    width: calc((100% / 5) * 4);
+    float: left;
+    //background: linear-gradient(to bottom right, $color-secondary, lightgreen);
+}
+
+.daily-interest {
+    padding: 4%;
+    font-size: large;
+    text-align: center;
+    background-color: $color-tertiary-light;
+}
+
+.fa-magnifying-glass {
+    &:hover {
+        color: $color-tertiary;
+    }
+}
+
+.fa-solid {
+    margin: 5px;
+    &:hover {
+        transform: scale(1.2);
+        transition: all 0.2s;
+    }
+}
+
+.fa-user-plus {
+    color: $color-primary;
+    &:hover {
+        transform: scale(1.2) translateY(5px);
+    }
+}
+
+.menu {
+    .fa-bars {
+        color: $color-primary;
+    }
+    .fa-cart-shopping {
+        color: $color-primary;
+    }
+}
+
+.labels {
+    padding: 6% 3% 6% 3%;
+    margin: 0;
+    font-size: medium;
+    text-align: center;
+    color: $color-secondary;
+    background-color: $color-tertiary-light;
+    &:hover {
+        color: $color-primary;
+        background-color: $color-tertiary;
+    }
+}
+
+.phone-name {
+    background-color: $color-tertiary-lightest;
+    padding: 1%;
+}
+
+.search-name1 {
+    background-color: $color-tertiary-lightest;
+}
+
+//signin-button
+.signin-button {
+    position: relative;
+}
+
+.specs-box {
+    margin-top: 18%;
+    text-align: center;
+}
+
+.top-searches {
+    margin-top: 2%;
+}
+
+[class^="search-name"] {
+    margin: 0;
+    padding: 2% 0 2% 3%;
+}
+
+// .signin-hover {
+//     font-size: small;
+//     display: none;
+//     background-color: $color-primary;
+//     position: absolute;
+//     &:hover {
+//         transition: display 0.3s;
+//         transform: scale(1.2) translateY(-10px);
+//         transition: all 0.2s;
+//     }
+// }
+//////////////////////////////////////// Navigation Menu
+.navigation-menu {
+    .navigation {
+        &__checkbox {
+            display: none;
+        }
+        &__button {
+            background-color: white;
+            height: 7rem;
+            width: 7rem;
+            position: fixed;
+            top: 6rem;
+            right: 6rem;
+            border-radius: 50%;
+            z-index: 2000;
+            box-shadow: 0 1rem 3rem rgba(black, 0.1);
+            text-align: center;
+            cursor: pointer;
+            @include respond(tab-port) {
+                top: 4rem;
+                right: 4rem;
+            }
+            @include respond(phone) {
+                top: 3rem;
+                right: 3rem;
+            }
+        }
+        &__background {
+            height: 6rem;
+            width: 6rem;
+            border-radius: 50%;
+            position: fixed;
+            top: 6.5rem;
+            right: 6.5rem;
+            background-image: radial-gradient( $color-tertiary-light, $color-tertiary-lightest);
+            z-index: 1000;
+            transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+            @include respond(tab-port) {
+                top: 4.5rem;
+                right: 4.5rem;
+            }
+            @include respond(phone) {
+                top: 3.5rem;
+                right: 3.5rem;
+            }
+        }
+        &__nav {
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1500;
+            opacity: 0;
+            width: 0;
+            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        &__list {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            list-style: none;
+            text-align: center;
+            width: 100%;
+        }
+        &__item {
+            margin: 1rem;
+        }
+        &__link {
+            &:link,
+            &:visited {
+                display: inline-block;
+                font-size: 3rem;
+                font-weight: 300;
+                padding: 1rem 2rem;
+                color: $color-white;
+                text-decoration: none;
+                text-transform: uppercase;
+                background-image: linear-gradient( 120deg, transparent 0%, transparent 50%, white 50%);
+                background-size: 220%;
+                transition: all 0.4s;
+                span {
+                    margin-right: 1.5rem;
+                    display: inline-block;
+                }
+            }
+            &:hover,
+            &:active {
+                background-position: 100%;
+                color: $color-primary;
+                transform: translateX(1rem);
+            }
+        }
+        //FUNCTIONALITY
+        &__checkbox:checked~&__background {
+            transform: scale(80);
+        }
+        &__checkbox:checked~&__nav {
+            opacity: 1;
+            width: 100%;
+        }
+        //ICON
+        &__icon {
+            position: relative;
+            margin-top: 3.5rem;
+            &,
+            &::before,
+            &::after {
+                width: 3rem;
+                height: 2px;
+                background-color: $color-grey-dark-3;
+                display: inline-block;
+            }
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                transition: all 0.2s;
+            }
+            &::before {
+                top: -0.8rem;
+            }
+            &::after {
+                top: 0.8rem;
+            }
+        }
+        &__button:hover &__icon::before {
+            top: -1rem;
+        }
+        &__button:hover &__icon::after {
+            top: 1rem;
+        }
+        &__checkbox:checked+&__button &__icon {
+            background-color: transparent;
+        }
+        &__checkbox:checked+&__button &__icon::before {
+            top: 0;
+            transform: rotate(135deg);
+        }
+        &__checkbox:checked+&__button &__icon::after {
+            top: 0;
+            transform: rotate(-135deg);
+        }
+    }
+    .all-brands {
+        height: 250px;
+    }
+}

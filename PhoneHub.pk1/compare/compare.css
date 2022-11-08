@@ -1,0 +1,77 @@
+a{
+  color: white;}
+  
+.col-1-of-2 {
+  width: calc(100% / 2);
+  float: left; }
+
+.col-1-of-3 {
+  width: calc(100% / 3);
+  float: left; }
+
+.col-1-of-4 {
+  width: calc(100% / 4);
+  float: left; }
+
+.col-1-of-5 {
+  width: calc(100% / 5);
+  float: left; }
+
+.col-3-of-5 {
+  width: calc((100% / 5) * 3);
+  float: left; }
+
+.col-4-of-5 {
+  width: calc((100% / 5) * 4);
+  float: left; }
+
+.all {
+  padding: 2% 5%; }
+
+.heading {
+  padding: 2%; }
+
+.specs-heading {
+  background-color: #c1c1c1; }
+
+.phone-img {
+  height: 250px; }
+
+.name,
+.search {
+  height: 50px; }
+
+.launch,
+.network,
+.build,
+.display,
+.platform,
+.battery,
+.sensors,
+.colors,
+.price {
+  overflow: auto;
+  height: 110px; }
+  .launch .col-1-of-5,
+  .network .col-1-of-5,
+  .build .col-1-of-5,
+  .display .col-1-of-5,
+  .platform .col-1-of-5,
+  .battery .col-1-of-5,
+  .sensors .col-1-of-5,
+  .colors .col-1-of-5,
+  .price .col-1-of-5 {
+    height: auto; }
+  .launch .col-4-of-5,
+  .network .col-4-of-5,
+  .build .col-4-of-5,
+  .display .col-4-of-5,
+  .platform .col-4-of-5,
+  .battery .col-4-of-5,
+  .sensors .col-4-of-5,
+  .colors .col-4-of-5,
+  .price .col-4-of-5 {
+    height: auto; }
+
+.camera {
+  height: 210px; }
