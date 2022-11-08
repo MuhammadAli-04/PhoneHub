@@ -47,6 +47,10 @@
     height: 24px;
 }
 
+body{
+    background-color: #ebeff3;
+}
+
 .content{
     padding: 0% 12%;
 }
